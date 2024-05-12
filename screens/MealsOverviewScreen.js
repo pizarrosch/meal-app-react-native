@@ -7,7 +7,17 @@ export default function MealsOverviewScreen({route}) {
   const displayedMeals = MEALS.filter((meal) => meal.categoryIds.indexOf(CatId) >= 0);
 
   function renderMealItem(itemData) {
-    return <MealItem title={itemData.item.title} imageUrl={itemData.item.imageUrl}/>
+    const item = itemData.item;
+
+    const mealProps = {
+      title: item.title,
+      imageUrl: item.imageUrl,
+      affordability: item.affordability,
+      duration: item.duration,
+      complexity: item.complexity
+    }
+
+    return <MealItem {...mealProps} />
   }
 
   return (

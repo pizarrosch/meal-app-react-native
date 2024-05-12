@@ -8,7 +8,7 @@ import 'react-native-reanimated';
 
 export default function App() {
 
- useFonts({
+  useFonts({
     'roboto-regular': require('./assets/fonts/Roboto-Regular.ttf'),
     'roboto-bold': require('./assets/fonts/Roboto-Bold.ttf')
   })
@@ -20,8 +20,8 @@ export default function App() {
       <StatusBar barStyle='dark-content'/>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Categories" component={CategoriesScreen} />
-          <Stack.Screen name="Overview" component={MealsOverviewScreen} />
+          <Stack.Screen name="Categories" component={CategoriesScreen}/>
+          <Stack.Screen name="Overview" component={MealsOverviewScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
     </>
