@@ -7,12 +7,12 @@ export default function MealsOverviewScreen({route}) {
   const displayedMeals = MEALS.filter((meal) => meal.categoryIds.indexOf(CatId) >= 0);
 
   function renderMealItem(itemData) {
-    return <MealItem title={itemData.item.title} />
+    return <MealItem title={itemData.item.title} imageUrl={itemData.item.imageUrl}/>
   }
 
   return (
     <View>
-      <FlatList data={displayedMeals} renderItem={renderMealItem} keyExtractor={item => item.id} />
+      <FlatList data={displayedMeals} renderItem={renderMealItem} keyExtractor={item => item.id}/>
     </View>
   )
 }
