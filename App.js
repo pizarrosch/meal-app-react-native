@@ -31,10 +31,19 @@ export default function App() {
             name="Categories"
             component={CategoriesScreen}
             options={{
-              title: 'All Categories',
+              title: 'All Categories'
             }}
           />
-          <Stack.Screen name="Overview" component={MealsOverviewScreen}/>
+          <Stack.Screen
+            name="Overview"
+            component={MealsOverviewScreen}
+            // options={({route}) => {
+            // const CatId = route.params.categoryId;
+            // return {
+            //   title: CatId
+            // }}}
+
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
