@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 6,
-    backgroundColor: '#7A542E',
+    backgroundColor: '#b7824f',
   },
   textItem: {
     textAlign: 'center'

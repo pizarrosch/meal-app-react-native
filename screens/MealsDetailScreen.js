@@ -1,4 +1,4 @@
-import {View, Text, Image, StyleSheet} from "react-native";
+import {View, Text, Image, StyleSheet, ScrollView} from "react-native";
 import {MEALS} from "../dummy-data/Dummy_data";
 import MealParameters from "../components/MealParameters";
 import Subtitle from "../components/MealDetail/Subtitle";
@@ -9,7 +9,7 @@ export default function MealsDetailScreen({route}) {
   const selectedMeals = MEALS.find(meals => meals.id === catId);
 
   return (
-    <View>
+    <ScrollView style={styles.rootContainer}>
       <Image style={styles.image} source={{uri: selectedMeals.imageUrl}}/>
       <Text style={styles.title}>{selectedMeals.title}</Text>
       <View>
@@ -24,11 +24,14 @@ export default function MealsDetailScreen({route}) {
           <List data={selectedMeals.steps}/>
         </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    marginBottom: 32
+  },
   image: {
     width: '100%',
     height: 350
