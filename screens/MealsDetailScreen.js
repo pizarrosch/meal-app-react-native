@@ -2,6 +2,7 @@ import {View, Text, Image, StyleSheet} from "react-native";
 import {MEALS} from "../dummy-data/Dummy_data";
 import MealParameters from "../components/MealParameters";
 import Subtitle from "../components/MealDetail/Subtitle";
+import List from "../components/MealDetail/List";
 
 export default function MealsDetailScreen({route}) {
   const catId = route.params.mealId;
@@ -15,10 +16,14 @@ export default function MealsDetailScreen({route}) {
         <MealParameters duration={selectedMeals.duration} complexity={selectedMeals.complexity}
                         affordability={selectedMeals.affordability}/>
       </View>
-      <Subtitle>Ingredients</Subtitle>
-      {selectedMeals.ingredients.map(ingredient => <Text key={ingredient}>{ingredient}</Text>)}
-      <Subtitle>Steps</Subtitle>
-      {selectedMeals.steps.map(step => <Text key={step}>{step}</Text>)}
+      <View style={styles.listOuterContainer}>
+        <View style={styles.listContainer}>
+          <Subtitle>Ingredients</Subtitle>
+          <List data={selectedMeals.ingredients}/>
+          <Subtitle>Steps</Subtitle>
+          <List data={selectedMeals.steps}/>
+        </View>
+      </View>
     </View>
   )
 }
@@ -34,4 +39,10 @@ const styles = StyleSheet.create({
     margin: 8,
     textAlign: 'center'
   },
+  listOuterContainer: {
+    alignItems: 'center'
+  },
+  listContainer: {
+    width: '80%'
+  }
 })
