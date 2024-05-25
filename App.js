@@ -1,4 +1,4 @@
-import {StatusBar, StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet, Text} from 'react-native';
 import {useFonts} from "expo-font";
 import CategoriesScreen from "./screens/CategoriesScreen";
 import {NavigationContainer} from "@react-navigation/native";

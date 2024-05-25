@@ -1,6 +1,6 @@
 import {Text, View, StyleSheet} from "react-native";
 
-export default function MealParameters({duration, complexity, affordability}) {
+export default function MealParameters({duration, complexity, affordability, onPress}) {
   return (
     <View style={styles.details}>
       <Text style={styles.detailItem}>{duration}m</Text>
