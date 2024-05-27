@@ -1,21 +1,28 @@
-import {View, Text, Image, StyleSheet, ScrollView, Button} from "react-native";
+import {View, Text, Image, StyleSheet, ScrollView} from "react-native";
 import {MEALS} from "../dummy-data/Dummy_data";
 import MealParameters from "../components/MealParameters";
 import Subtitle from "../components/MealDetail/Subtitle";
 import List from "../components/MealDetail/List";
 import {useLayoutEffect} from "react";
+import IconButton from "../components/IconButton";
 
 export default function MealsDetailScreen({route, navigation}) {
   const catId = route.params.mealId;
   const selectedMeals = MEALS.find(meals => meals.id === catId);
+  let clicksNumber = 0;
 
   function pressHeaderButton() {
-    console.log('Tapped!')
+    clicksNumber += 1;
+    console.log(`I am clicked ${clicksNumber} times!`)
   }
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: () => <Button title='Tap me' onPress={pressHeaderButton}/>
+      headerRight: () => <IconButton
+        onPress={pressHeaderButton}
+        color='white'
+        icon='star'
+      />
     })
   }, [navigation, pressHeaderButton]);
 
@@ -25,7 +32,7 @@ export default function MealsDetailScreen({route, navigation}) {
       <Text style={styles.title}>{selectedMeals.title}</Text>
       <View>
         <MealParameters duration={selectedMeals.duration} complexity={selectedMeals.complexity}
-                        affordability={selectedMeals.affordability} />
+                        affordability={selectedMeals.affordability}/>
       </View>
       <View style={styles.listOuterContainer}>
         <View style={styles.listContainer}>
