@@ -1,6 +1,6 @@
 import {View, Text, Pressable, Image, StyleSheet, Platform} from "react-native";
 import {useNavigation} from "@react-navigation/native";
-import MealParameters from "./MealParameters";
+import MealParameters from "../MealParameters";
 
 export default function MealItem({id, title, imageUrl, duration, complexity, affordability}) {
 
