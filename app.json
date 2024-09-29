@@ -15,14 +15,16 @@
     },
     "ios": {
       "buildNumber": "1.0.0",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pizarrosch.myrecipebook"
     },
     "android": {
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.pizarrosch.myrecipebook"
     },
     "web": {
       "bundler": "metro",
@@ -34,6 +36,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "30749972-b84b-46bf-af9e-d46a9e85f102"
+      }
     }
   }
 }
